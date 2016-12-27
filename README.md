@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-<img src="media/rishi.png">
+<img src="https://raw.githubusercontent.com/CodeDotJS/smule/master/media/rishi.png">
 <br>
 <img src="https://travis-ci.org/CodeDotJS/smule.svg?branch=master">
 <img src="https://camo.githubusercontent.com/b9d624cb37169bb3e06fd6deddabfff02b5e43be/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64655f7374796c652d584f2d3565643963372e737667">
@@ -24,7 +24,7 @@ $ sudo npm install --global smule
 
 <p align="center">
 <br>
-<img src="media/star.gif">
+<img src="https://raw.githubusercontent.com/CodeDotJS/smule/master/media/star.gif">
 </p>
 
 ## Usage
