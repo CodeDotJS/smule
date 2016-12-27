@@ -6,7 +6,7 @@
 <img src="https://camo.githubusercontent.com/b9d624cb37169bb3e06fd6deddabfff02b5e43be/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64655f7374796c652d584f2d3565643963372e737667">
 </h1>
 
->  :star2: A complete media downloader for [Smule](https://smule.com)
+>  :star2: ∞ :star2: A complete media downloader for [Smule](https://smule.com)
 
 ## Install
 
