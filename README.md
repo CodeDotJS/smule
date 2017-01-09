@@ -47,8 +47,6 @@ __`It downloads both - audio and video`__
 
 - __[`smule-api`](https://github.com/CodeDotJS/smule-api)__ `:` `A simple API for Smule. Lyrics excluded.`
 
-__`WHY ?`__ `:` `Made this tool because I liked someone's voice too much. Couldn't stop myself from downloading all of her songs.`
-
 ## Licnese
 
 MIT &copy; [Rishi Giri](http://rishigiri.com)
