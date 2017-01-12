@@ -1,6 +1,6 @@
 {
   "name": "smule",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A complete media downloader for smule.com",
   "main": "cli.js",
   "bin": {
