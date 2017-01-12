@@ -46,20 +46,6 @@ if (fallArg === '-f' || fallArg === '--fun') {
 	process.exit(1);
 }
 
-// Functions, because I'm planning to add few more features.
-
-const detectFile = arg => {
-	return arg.split(`twitter:player:stream:content_type" content="`)[1].split('">')[0].replace('/mp4', '');
-};
-
-const detectMediaSource = arg => {
-	return arg.split(`twitter:player:stream" content="`)[1].split('">')[0];
-};
-
-const decodeMediaScript = source => {
-	return source.replace(/amp;/g, '');
-};
-
 const songName = arg => {
 	return arg.split('/')[4];
 };
@@ -75,9 +61,9 @@ if (isURL(fallArg) === true) {
 			spinner.start();
 			got(fallArg).then(res => {
 				const $ = res.body;
-				const mediaType = detectFile($);
-				const mediaSource = detectMediaSource($);
-				const fetchMainSource = decodeMediaScript(mediaSource);
+				const mediaType = $.split(`twitter:player:stream:content_type" content="`)[1].split('">')[0].replace('/mp4', '');
+				const mediaSource = $.split(`twitter:player:stream" content="`)[1].split('">')[0];
+				const fetchMainSource = mediaSource.replace(/amp;/g, '');
 				logUpdate();
 				spinner.text = chalk.dim('Fetching downloadable link');
 
@@ -107,6 +93,8 @@ if (isURL(fallArg) === true) {
 				});
 			}).catch(err => {
 				if (err) {
+					logUpdate(`\n ${pre} ${chalk.dim('Broken link or maybe the song has been removed!')}\n`);
+					spinner.stop();
 					process.exit(1);
 				}
 			});
