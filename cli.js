@@ -15,40 +15,29 @@ const pkg = require('./package.json');
 
 updateNotifier({pkg}).notify();
 
+let fallArg = process.argv[2];
 const spinner = ora();
-
-const fallArg = process.argv[2];
 const pre = chalk.red('✘');
 const getIn = `${os.homedir()}/Smule/`;
 
 if (!fallArg || fallArg === '-h' || fallArg === '--help') {
 	console.log(`
- ${chalk.cyan('Usage')}   : smule <source>
+ ${chalk.cyan('Usage')}   : smule <source/url>
 
  ${chalk.cyan('Command')} :
-  -v, --version     :  show version
-  -f, --fun         :  no spoiler
-  -h, --help        :  for help
+  -h, --help     :  for help
 
  ${chalk.cyan('Example')} :
-  $ smule <source>  :  auto detect the filetype and download
+  $ smule <url>  :  auto detect the filetype and download
 `);
-	process.exit(1);
-}
-
-if (fallArg === '-v' || fallArg === '--version') {
-	console.log(`\n${chalk.cyan(' Current version ')} :  ${pkg.version}\n`);
-	process.exit(1);
-}
-
-if (fallArg === '-f' || fallArg === '--fun') {
-	console.log(`\n “How do I have productive days with minimum drama? \n  Simple; I mind my own business.” \n`);
 	process.exit(1);
 }
 
 const songName = arg => {
 	return arg.split('/')[4];
 };
+
+fallArg = process.argv[2].split('www').join('https://www');
 
 if (isURL(fallArg) === true) {
 	dns.lookup('smule.com', err => {
